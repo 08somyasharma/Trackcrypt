@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | TrackCrypt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+        }
+
+        .brand {
+            margin-bottom: 1.5rem;
+        }
+
+        .brand i {
+            font-size: 2.5rem;
+            color: #22c55e;
+        }
+
+        .brand h1 {
+            font-size: 2.2rem;
+            margin-top: 0.5rem;
+            color: #ffffff;
+        }
+
+        .brand p {
+            font-size: 0.9rem;
+            color: #cbd5f5;
+        }
+
+        .auth-box {
+            background: rgba(30, 41, 59, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .auth-header {
+            margin-bottom: 2rem;
+        }
+
+        .auth-title {
+            font-size: 1.7rem;
+            color: var(--text);
+        }
+
+        .auth-subtitle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <!-- BRANDING -->
+    <div class="brand">
+        <i class="fas fa-chart-line"></i>
+        <h1>TrackCrypt</h1>
+        <p>A Virtual Internship Project</p>
+    </div>
+
+    <!-- REGISTER BOX -->
+    <div class="auth-box">
+        <div class="auth-header">
+            <h2 class="auth-title">Create Account</h2>
+            <p class="auth-subtitle">Start your crypto journey today</p>
+        </div>
+
+        <form method="POST" action="/register">
+
+            <div class="form-group">
+                <label class="form-label">Register As</label>
+                <select name="role" class="form-input" required>
+                    <option value="user">Normal User</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-lock"></i> Password</label>
+                <input type="password" name="password" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-lock"></i> Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-input" required>
+            </div>
+
+            <button type="submit" class="btn-auth">
+                <i class="fas fa-user-plus"></i> Create Account
+            </button>
+
+        </form>
+
+        <div class="auth-footer">
+            Already have an account?
+            <a href="/login" class="auth-link">Sign in</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
